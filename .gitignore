@@ -1,0 +1,7 @@
+# Carpetas que crea Python solo al importar módulos: se regeneran, no son código nuestro
+__pycache__/
+*.pyc
+
+# Configuración personal del editor: es de mi ordenador, no del proyecto
+.vscode/
+.idea/
