@@ -5,6 +5,9 @@ __pycache__/
 # El log se genera al ejecutar el script y crece con cada ejecución: no hace falta subirlo
 *.log
 
+# El zip de entrega se genera a partir de estos mismos archivos
+*.zip
+
 # Configuración personal del editor: es de mi ordenador, no del proyecto
 .vscode/
 .idea/

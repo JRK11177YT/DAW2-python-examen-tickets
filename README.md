@@ -30,7 +30,9 @@ repetido...), se avisa por pantalla, se descarta y el programa sigue con los dem
 | `schema.sql` | Crea la base de datos `tickets_db` y sus 6 tablas |
 | `build_insert_from_tickets.py` | El script |
 | `insert_ticket.sql` | Se genera al ejecutar el script |
-| `tickets.log` | Se genera al ejecutar el script: historial de todas las ejecuciones con fecha y hora (tickets correctos, descartados y por qué, y resumen) |
+| `tickets.log` | Se genera al ejecutar el script: solo los errores (tickets descartados y por qué, argumentos incorrectos), con fecha y hora |
+| `capturaterminal.png` | Ejecución del script: con todos los tickets bien y con la factura 14 estropeada |
+| `capturaphpmyadmin.png` | Tabla `ticket` en phpMyAdmin tras cargar el SQL: 19 tickets, sin el 20010014 |
 
 ## Cómo ejecutarlo
 

@@ -1,7 +1,7 @@
 # Alumno: Jorge Ruiz
 # Examen Python - Generador SQL de tickets
 # Lee los tickets .txt de una carpeta, los valida y genera insert_ticket.sql con los INSERT
-# de las 6 tablas de tickets_db. Cada ejecución se registra en tickets.log.
+# de las 6 tablas de tickets_db. Los errores se registran en tickets.log.
 # Uso: python build_insert_from_tickets.py <carpeta_de_tickets>
 
 import os
@@ -16,24 +16,23 @@ ARCHIVO_LOG = "tickets.log"
 # 0. MENSAJES Y LOG
 # ---------------------------------------------------------------------------
 
-def escribir_log(nivel, mensaje):
-    """Añade una línea al log con fecha, hora y nivel (INFO o ERROR)."""
+def escribir_log(mensaje):
+    """Añade un error al log con la fecha y la hora."""
     momento = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    # Modo "a": añade al final sin borrar las ejecuciones anteriores
+    # Modo "a": añade al final sin borrar los errores de ejecuciones anteriores
     with open(ARCHIVO_LOG, "a", encoding="utf-8") as log:
-        log.write(f"{momento} [{nivel}] {mensaje}\n")
+        log.write(f"{momento} [ERROR] {mensaje}\n")
 
 
 def informar(mensaje):
-    """Muestra un mensaje en la terminal y lo guarda en el log."""
+    """Muestra un mensaje en la terminal (no va al log)."""
     sys.stdout.write(mensaje + "\n")
-    escribir_log("INFO", mensaje)
 
 
 def avisar_error(mensaje):
     """Muestra un error por la salida de errores y lo guarda en el log."""
     sys.stderr.write(mensaje + "\n")
-    escribir_log("ERROR", mensaje)
+    escribir_log(mensaje)
 
 
 # ---------------------------------------------------------------------------
@@ -268,8 +267,6 @@ def generar_sql(tablas, nombre_archivo):
 
 def main():
     """Lee los tickets de la carpeta y genera insert_ticket.sql."""
-    escribir_log("INFO", f"===== Inicio: {' '.join(sys.argv)} =====")
-
     if len(sys.argv) != 2:
         avisar_error("Uso: python build_insert_from_tickets.py <carpeta_de_tickets>")
         sys.exit(1)
@@ -290,7 +287,6 @@ def main():
         try:
             ticket = leer_ticket(os.path.join(carpeta, nombre))
             anadir_ticket(tablas, ticket)
-            escribir_log("INFO", f"{nombre}: correcto (ticket {ticket['numero']}, {len(ticket['productos'])} productos)")
         except (ValueError, IndexError) as error:
             avisar_error(f"{nombre}: descartado ({error})")
 
