@@ -2,6 +2,9 @@
 __pycache__/
 *.pyc
 
+# El log se genera al ejecutar el script y crece con cada ejecución: no hace falta subirlo
+*.log
+
 # Configuración personal del editor: es de mi ordenador, no del proyecto
 .vscode/
 .idea/
