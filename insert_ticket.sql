@@ -148,17 +148,6 @@ INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES 
 INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010013, 20, 1.000, 1.30);
 INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010013, 3, 3.000, 3.45);
 INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010013, 7, 1.250, 7.75);
-INSERT INTO ticket (numero, fecha_hora, empleado_id, subtotal, iva, total, forma_pago_id, autorizacion) VALUES (20010014, '2025-09-24 11:21:00', 24, 27.76, 5.83, 33.59, 2, NULL);
-INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010014, 3, 2.000, 2.30);
-INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010014, 15, 2.000, 3.50);
-INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010014, 7, 1.000, 6.20);
-INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010014, 5, 2.000, 1.00);
-INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010014, 17, 2.000, 1.40);
-INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010014, 16, 2.000, 2.20);
-INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010014, 4, 1.000, 6.50);
-INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010014, 6, 1.250, 1.56);
-INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010014, 1, 3.000, 2.55);
-INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010014, 8, 0.500, 0.55);
 INSERT INTO ticket (numero, fecha_hora, empleado_id, subtotal, iva, total, forma_pago_id, autorizacion) VALUES (20010015, '2025-09-25 15:58:00', 15, 19.25, 4.04, 23.29, 1, '134875');
 INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010015, 10, 1.000, 2.40);
 INSERT INTO ticket_linea (ticket_numero, producto_id, cantidad, importe) VALUES (20010015, 17, 2.000, 1.40);
